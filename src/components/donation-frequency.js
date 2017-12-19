@@ -8,9 +8,9 @@ var DonationFrequency = React.createClass({
     intl: React.PropTypes.object
   },
   componentDidMount: function() {
-    if (this.singleInput.checked) {
+    if (this.props.frequency !== "single" && this.singleInput.checked) {
       this.props.setFrequency(this.singleInput.value);
-    } else if (this.monthlyInput.checked) {
+    } else if (this.props.frequency !== "monthly" && this.monthlyInput.checked) {
       this.props.setFrequency(this.monthlyInput.value);
     }
   },
@@ -21,9 +21,6 @@ var DonationFrequency = React.createClass({
       action: "Changed Frequency",
       label: e.currentTarget.value
     });
-  },
-  validate: function() {
-    return true;
   },
   render: function() {
     var frequency = this.props.frequency;

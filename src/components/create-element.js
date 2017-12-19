@@ -1,6 +1,5 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { asyncSessionStorage } from 'redux-persist/storages';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';

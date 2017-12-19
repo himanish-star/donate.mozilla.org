@@ -7,7 +7,7 @@ import { setCurrency } from '../actions';
 var CurrencyDropdown = React.createClass({
   componentDidMount: function() {
     var currency = currencyData[this.selectElement.value];
-    if (currency) {
+    if (currency && currency.code !== this.props.currency.code) {
       this.props.setCurrency(currency);
     }
   },
