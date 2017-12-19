@@ -7,6 +7,12 @@ var EmailInput = React.createClass({
   contextTypes: {
     intl: React.PropTypes.object
   },
+  componentDidMount: function() {
+    var email = this.inputElement.value;
+    if (email) {
+      this.props.setEmail(email);
+    }
+  },
   onEmailChange: function(e) {
     this.props.setEmail(e.currentTarget.value);
   },
